@@ -2,7 +2,7 @@
 import { ref } from "vue"
 
 class name {
-    protected state
+    protected isShow: Ref<boolean>
     constructor() {
         this.isShow = ref(false)
     }
