@@ -2,17 +2,17 @@
   <div class="app-wrapper">
     <Header></Header>
     <Sidebar></Sidebar>
-    <div class="header">header</div>
-    <main><router-view /></main>
+    <Main></Main>
   </div>
 </template>
 
 <script lang="ts">
-import Header from "./Header.vue";
-import Sidebar from "./Sidebar.vue";
+import Main from './Main.vue'
+import Header from './Header.vue'
+import Sidebar from './Sidebar.vue'
 export default {
-  components: { Header, Sidebar },
-};
+  components: { Main, Header, Sidebar }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-wrapper" :class="{ hidden: isShow }">
+  <div class="sidebar-wrapper" :class="{ hidden: !isShow }">
     <header>title</header>
     <main>
       <ul>
@@ -7,7 +7,7 @@
       </ul>
     </main>
   </div>
-  <aside v-show="!isShow" @click="updateShowState" class="shade"></aside>
+  <aside v-show="isShow" @click="updateShowState" class="shade"></aside>
 </template>
 
 <script lang="ts">
@@ -49,17 +49,20 @@ $width: 240px;
   }
 }
 .hidden {
-  left: -$width;
+  width: 64px;
 }
-
 @media screen and (max-width: 1000px) {
+  .hidden {
+    left: -$width;
+  }
   .shade {
     z-index: 1024;
     position: fixed;
+    left: 0;
+    top: 0;
     background: rgba(128, 128, 128, 0.4);
     width: 100%;
     height: 100%;
-    transition: 1s;
   }
 }
 </style>

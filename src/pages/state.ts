@@ -4,7 +4,7 @@ import { readonly, ref, Ref } from "vue"
 class ShowState {
     protected isShow: Ref<boolean>
     constructor() {
-        this.isShow = ref(false)
+        this.isShow = ref(true)
     }
     getValue() {
         return readonly(this.isShow)
