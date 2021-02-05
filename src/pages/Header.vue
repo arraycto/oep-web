@@ -2,18 +2,13 @@
   <div class="header">{{ l }}</div>
 </template>
 
-<script>
-import { onMounted } from "vue";
-import l from "./state";
+<script lang="ts">
+import ShowState from './state'
 export default {
   setup() {
-    onMounted(() => {
-      l.value = true
-      console.log(l);
-    });
-    return { l };
-  },
-};
+    return { isShow: ShowState.getValue }
+  }
+}
 </script>
 
 <style>

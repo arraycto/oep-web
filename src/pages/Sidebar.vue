@@ -1,36 +1,27 @@
 <template>
   <div class="sidebar-wrapper" :class="{ hidden: isShow }">
-    <header>{{ l }}</header>
+    <header>title</header>
     <main>
       <ul>
         <li v-for="i in 223" :key="i">i</li>
       </ul>
     </main>
   </div>
-  <aside
-    v-show="!isShow"
-    @click="
-      () => {
-        l = false;
-        isShow = true;
-      }
-    "
-    class="shade"
-  ></aside>
+  <aside v-show="!isShow" @click="updateShowState" class="shade"></aside>
 </template>
 
 <script lang="ts">
-import l from "./state";
-import { ref } from "vue";
+import showState from './state'
 export default {
   setup() {
-    const isShow = ref(false);
     return {
-      isShow,
-      l,
-    };
-  },
-};
+      updateShowState: () => {
+        showState.reverseValue()
+      },
+      isShow: showState.getValue()
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
